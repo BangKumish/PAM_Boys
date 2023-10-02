@@ -9,7 +9,23 @@
         android:id="@+id/nav_skill"
         android:name="com.omkumis.projectpam.ui.skill.SkillFragment"
         android:label="@string/menu_skill"
-        tools:layout="@layout/fragment_skill" />
+        tools:layout="@layout/fragment_skill" >
+        <action
+            android:id="@+id/action_skill_to_detail"
+            app:destination="@id/nav_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_detail"
+        android:name="com.omkumis.projectpam.ui.skill.DetailFragment"
+        android:label="@string/menu_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="extraName"
+            app:argType="string" />
+            />
+    </fragment>
+
     <fragment
         android:id="@+id/nav_home"
         android:name="com.omkumis.projectpam.ui.home.HomeFragment"

@@ -1,26 +1,62 @@
-package com.omkumis.projectpam
+package com.omkumis.projectpam.ui.skill
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.imageview.ShapeableImageView
 import com.omkumis.projectpam.databinding.SkillItemBinding
+import com.omkumis.projectpam.R
 
-class Adaptor(val list:ArrayList<Info>):RecyclerView.Adapter<Adaptor.MyView>() {
+class Adaptor(private var list:ArrayList<Skill>):RecyclerView.Adapter<Adaptor.MyView>() {
 
-    inner class MyView(val itemBinding: SkillItemBinding):RecyclerView.ViewHolder(itemBinding.root){
+    var onItemClick: ((Skill) -> Unit)? = null
 
+    fun setFilteredList(list: ArrayList<Skill>) {
+        this.list = list
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyView {
-        return MyView(SkillItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+//        return MyView(SkillItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.skill_item, parent, false)
+        return MyView(itemView)
+    }
+
+    override fun onBindViewHolder(holder: MyView, position: Int) {
+        val currentItem = list[position]
+        holder.titleImage.setImageResource(currentItem.titleImage)
+        holder.tvHeading.text = currentItem.heading
+        holder.itemView.setOnClickListener{
+            holder.itemView.setOnClickListener {
+                onItemClick?.invoke(currentItem)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
         return list.size
     }
 
-    override fun onBindViewHolder(holder: MyView, position: Int) {
-        holder.itemBinding.imageView.setImageResource(list[position].image)
-        holder.itemBinding.textView.text = list[position].name
+    class MyView(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val titleImage: AppCompatImageView = itemView.findViewById(R.id.imageView)
+        val tvHeading: TextView = itemView.findViewById(R.id.textView)
     }
 }
+//    inner class MyView(val itemBinding: View):RecyclerView.ViewHolder(itemBinding.root){
+//
+//    }
+//
+//
+//
+//    override fun getItemCount(): Int {
+//        return list.size
+//    }
+//
+//    override fun onBindViewHolder(holder: MyView, position: Int) {
+//        holder.itemBinding.imageView.setImageResource(list[position].image)
+//        holder.itemBinding.textView.text = list[position].name
+//    }

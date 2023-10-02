@@ -6,9 +6,24 @@
     <string name="nav_header_subtitle">andreas.121140168@student.itera.ac.id</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="action_search">Search your skill..</string>
+
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_skill">Skill</string>
+    <string name="menu_detail">Detail</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="text_cpp">C++</string>
+    <string name="text_csharp">C#</string>
+    <string name="text_flutter">Flutter</string>
+    <string name="text_golang">GoLang</string>
+    <string name="text_js">JavaScript</string>
+    <string name="text_kotlin">Kotlin</string>
+    <string name="text_php">php</string>
+    <string name="text_python">Python</string>
+    <string name="text_rust">Rust</string>
+    <string name="text_ts">TypeScript</string>
 </resources>
