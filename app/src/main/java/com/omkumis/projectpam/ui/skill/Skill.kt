@@ -8,8 +8,6 @@ data class Skill(val titleImage: Int, var heading:String) : Parcelable{
         parcel.readInt(),
         parcel.readString()!!
     )
-    {
-    }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(titleImage)

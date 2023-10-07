@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="skill_img_array">
+        <item>@drawable/cpp</item>
+        <item>@drawable/csharp</item>
+        <item>@drawable/flutter</item>
+        <item>@drawable/golang</item>
+        <item>@drawable/js</item>
+        <item>@drawable/kotlin</item>
+        <item>@drawable/php</item>
+        <item>@drawable/python</item>
+        <item>@drawable/rust</item>
+        <item>@drawable/ts</item>
+    </integer-array>
+
+    <string-array name="skill_str_array">
+        <item>@string/text_cpp</item>
+        <item>@string/text_csharp</item>
+        <item>@string/text_flutter</item>
+        <item>@string/text_golang</item>
+        <item>@string/text_js</item>
+        <item>@string/text_kotlin</item>
+        <item>@string/text_php</item>
+        <item>@string/text_python</item>
+        <item>@string/text_rust</item>
+        <item>@string/text_ts</item>
+    </string-array>
+</resources>

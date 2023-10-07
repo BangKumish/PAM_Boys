@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.omkumis.projectpam.R
+import com.omkumis.projectpam.ui.helper.ConstraintUtil
 import kotlin.collections.ArrayList
 import java.util.*
 
@@ -24,8 +25,6 @@ class SkillFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchView: SearchView
     private lateinit var skillArrayList : ArrayList<Skill>
-    private lateinit var imageId : Array<Int>
-    private lateinit var heading : Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -100,91 +99,9 @@ class SkillFragment : Fragment() {
         }
     }
 
-    private fun dataInitialize(){
+    private fun dataInitialize() {
         skillArrayList = arrayListOf<Skill>()
 
-        imageId = arrayOf(
-            R.drawable.cpp,
-            R.drawable.csharp,
-            R.drawable.flutter,
-            R.drawable.golang,
-            R.drawable.js,
-            R.drawable.kotlin,
-            R.drawable.php,
-            R.drawable.python,
-            R.drawable.rust,
-            R.drawable.ts,
-        )
-
-        heading = arrayOf(
-            getString(R.string.text_cpp),
-            getString(R.string.text_csharp),
-            getString(R.string.text_flutter),
-            getString(R.string.text_golang),
-            getString(R.string.text_js),
-            getString(R.string.text_kotlin),
-            getString(R.string.text_php),
-            getString(R.string.text_python),
-            getString(R.string.text_rust),
-            getString(R.string.text_ts),
-            )
-        getUserData()
-
+        skillArrayList.addAll(ConstraintUtil.getSkillData(this))
     }
-
-    private fun getUserData() {
-
-        for (i in imageId.indices){
-            val skill = Skill(imageId[i],heading[i])
-            skillArrayList.add(skill)
-
-        }
-
-    }
-
 }
-
-//class SkillFragment : Fragment() {
-//
-//    private lateinit var adaptor: Adaptor
-//    private lateinit var list: ArrayList<Info>
-//    private lateinit var binding: FragmentSkillBinding
-//    private lateinit var searchView: SearchView
-//    private lateinit var recyclerView: RecyclerView
-//    // This property is only valid between onCreateView and
-//    // onDestroyView.
-////    private val binding get() = _binding!!
-//
-//    override fun onCreateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View {
-//        binding = FragmentSkillBinding.inflate(inflater,container,false)
-//        return binding.root
-//    }
-//
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view_skill)
-//        recyclerView.setHasFixedSize(true)
-//        list = ArrayList()
-//        list.add(Info(R.drawable.cpp, "CPP"))
-//        list.add(Info(R.drawable.csharp, "C#"))
-//        list.add(Info(R.drawable.js, "JavaScript"))
-//        list.add(Info(R.drawable.kotlin, "Kotlin"))
-//        list.add(Info(R.drawable.python, "Python"))
-//        list.add(Info(R.drawable.cpp, "CPP"))
-//        list.add(Info(R.drawable.csharp, "C#"))
-//        list.add(Info(R.drawable.js, "JavaScript"))
-//        list.add(Info(R.drawable.kotlin, "Kotlin"))
-//        list.add(Info(R.drawable.python, "Python"))
-//
-//        adaptor = Adaptor(list)
-//        recyclerView.adapter = adaptor
-//        recyclerView.layoutManager = LinearLayoutManager(requireActivity())
-//
-//
-//    }
-//
-//}
