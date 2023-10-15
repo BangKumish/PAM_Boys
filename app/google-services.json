@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "100979619552",
+    "project_id": "project-pam-bangkumis",
+    "storage_bucket": "project-pam-bangkumis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100979619552:android:9dc7c3f25a90021b00c285",
+        "android_client_info": {
+          "package_name": "com.omkumis.projectpam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUGEh6n0LbrHiwqgorhWIVdWQAPU879E8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

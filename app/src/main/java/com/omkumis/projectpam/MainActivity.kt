@@ -12,6 +12,8 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.omkumis.projectpam.databinding.ActivityMainBinding
+import com.omkumis.projectpam.ui.adapter.ViewPagerAdapter
+import com.omkumis.projectpam.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration

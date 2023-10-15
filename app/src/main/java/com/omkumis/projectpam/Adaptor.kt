@@ -46,17 +46,3 @@ class Adaptor(private var list:ArrayList<Skill>):RecyclerView.Adapter<Adaptor.My
         val tvHeading: TextView = itemView.findViewById(R.id.textView)
     }
 }
-//    inner class MyView(val itemBinding: View):RecyclerView.ViewHolder(itemBinding.root){
-//
-//    }
-//
-//
-//
-//    override fun getItemCount(): Int {
-//        return list.size
-//    }
-//
-//    override fun onBindViewHolder(holder: MyView, position: Int) {
-//        holder.itemBinding.imageView.setImageResource(list[position].image)
-//        holder.itemBinding.textView.text = list[position].name
-//    }
